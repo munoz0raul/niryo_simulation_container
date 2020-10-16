@@ -1,0 +1,13 @@
+# niryo/docker-compose.yml
+version: "3"
+services:
+  niryo:
+    image: niryo_simulation_container:1.0
+    tmpfs:
+      - /run
+      - /var/lock
+      - /var/log
+    ports:
+      - 9090:9090
+    network_mode: "host"
+    restart: always
